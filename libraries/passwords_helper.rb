@@ -34,7 +34,7 @@ module PasswordsHelper
   protected
 
   def lookup_password_attribute(service, user)
-    return node[:passwords][service][user]
+    return node[service]["#{user}_password"]
   rescue Exception
     return nil
   end
