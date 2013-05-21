@@ -59,3 +59,7 @@ end
 class Chef::Recipe
     include PasswordsHelper
 end
+
+class Chef::Node
+    include PasswordsHelper
+end
