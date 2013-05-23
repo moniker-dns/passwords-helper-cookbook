@@ -18,6 +18,8 @@ module PasswordsHelper
   def lookup_password(service, user, default=nil)
     sources = node[:passwords][:sources]
 
+    Chef::Log.info("Searching for password in: #{sources.join(', ')}")
+
     sources.each do |source|
       password = send("lookup_password_#{source}", service, user)
 
