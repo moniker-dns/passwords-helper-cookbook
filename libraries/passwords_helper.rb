@@ -47,6 +47,14 @@ module PasswordsHelper
     return nil
   end
 
+  def lookup_password_databag_hp(service, user)
+    passwords = get_data_bag_item('passwords', service)
+
+    return passwords.fetch(user, nil)
+  rescue Exception
+    return nil
+  end
+
   def lookup_password_edb(service, user)
     passwords = Chef::EncryptedDataBagItem.load('passwords', user)
 

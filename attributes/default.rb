@@ -1,2 +1,1 @@
-default[:passwords][:sources] = ['edb', 'databag', 'attribute']
-
+default[:passwords][:sources] = ['edb', 'databag_hp', 'databag', 'attribute']
